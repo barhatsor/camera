@@ -161,6 +161,15 @@ body {
 }
 
 
+.log {
+  position: fixed;
+  color: #000;
+  top: 0;
+  left: 0;
+  font-family: system-ui;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 body {
