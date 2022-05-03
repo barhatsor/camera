@@ -291,7 +291,7 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
       duration = Math.round(duration);
       
       if (!mins && String(duration).length === 1) {
-        duration += '0';
+        duration = '0' + duration;
       }
       
       if (!mins) duration = '0:' + duration;
