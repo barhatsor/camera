@@ -219,10 +219,6 @@ function stopRecording() {
   
 }
 
-function wait(callback, time) {
-  window.setTimeout(callback, time);
-}
-
 recordButton.addEventListener('click', (e) => {
   
   e.preventDefault();
