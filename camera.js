@@ -290,9 +290,7 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     
     galleryWrapper.querySelectorAll('.picture').forEach(pic => {
       
-      pic.onload = () => {
-        pic.play();
-      };
+      pic.play();
       
     });
     
