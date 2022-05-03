@@ -306,7 +306,7 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
       
       const thumbnailURL = await blobToDataURL(file);
             
-      galleryWrapper.innerHTML += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="if (!this.getAttribute(\'dontOpen\')) { this.play(); } else { this.setAttribute(\'dontOpen\', false); }" onpause="this.setAttribute(\'dontOpen\', true);this.click()" class="picture" crossorigin="anonymous"></video>';
+      galleryWrapper.innerHTML += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="this.play();" onpause="" class="picture" crossorigin="anonymous"></video>';
       
     });
     
