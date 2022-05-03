@@ -257,10 +257,23 @@ initializeCamera();
 */
 
 
+function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return '0 Bytes';
+
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
+
 document.querySelector('#gallery-input').addEventListener('change', function() {
   if (this.files && this.files[0]) {
     
-    document.querySelector('.log').innerText = JSON.stringify(this.files);
+    document.querySelector('.log').innerText = formatBytes(this.files[0].size);
     
     cameraView.srcObject = this.files[0];
     cameraView.play();
