@@ -16,8 +16,8 @@ body {
   background: #000;
   object-fit: cover;
   pointer-events: none;
-  will-change: transform;
-  transition: .4s var(--cubic-function) transform;
+  /*will-change: transform;
+  transition: .4s var(--cubic-function) transform;*/
   background-image: var(--placeholder-image);
   z-index: -1;
 }
