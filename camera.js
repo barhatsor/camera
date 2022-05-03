@@ -288,6 +288,14 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     galleryWrapper.innerHTML = out;
     galleryWrapper.classList.add('visible');
     
+    galleryWrapper.querySelectorAll('.picture').forEach(pic => {
+      
+      pic.onload = () => {
+        pic.play();
+      };
+      
+    });
+    
   }
   
   
