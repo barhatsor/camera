@@ -5,6 +5,7 @@ const flipButton = document.querySelector('.camera-option.flip');
 const videoContainer = document.querySelector('.video-container');
 
 const galleryInput = document.querySelector('#gallery-input');
+const galleryWrapper = document.querySelector('.gallery-wrapper');
 
 // video constraints
 const constraints = {
