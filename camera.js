@@ -272,6 +272,23 @@ function formatBytes(bytes, decimals = 2) {
 
 
 document.querySelector('#gallery-input').addEventListener('change', function() {
+  
+  const files = this.files;
+  
+  if (files) {
+    
+    let out = '';
+    
+    files.forEach(file => {
+      
+      out += '<video src="' + URL.createObjectURL(this.files[0]) + '" class="picture" crossorigin="anonymous" playsinline></video>';
+      
+    });
+    
+  }
+  
+  
+  /*
   if (this.files && this.files[0]) {
     
     document.querySelector('.log').innerText = formatBytes(this.files[0].size);
@@ -303,6 +320,7 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     
     //document.querySelector('.log').innerHTML += '<a href="' + cameraView.src + '" download>Download</a>';
     
-  }
+  }*/
+  
 });
 
