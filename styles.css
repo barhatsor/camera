@@ -177,6 +177,7 @@ body {
   height: calc(273px / var(--webkit-scale));
   object-fit: cover;
   background-image: var(--placeholder-image);
+  background-size: cover;
 }
 
 
