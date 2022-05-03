@@ -278,7 +278,7 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     cameraView.src = URL.createObjectURL(this.files[0]);
     cameraView.play();
     
-    document.querySelector('.log').innerHTML += '<a href="' + cameraView.src + '" download>Download</a>';
+    //document.querySelector('.log').innerHTML += '<a href="' + cameraView.src + '" download>Download</a>';
     
   }
 });
