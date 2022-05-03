@@ -285,6 +285,9 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
       
     });
     
+    galleryWrapper.innerHTML = out;
+    galleryWrapper.classList.add('visible');
+    
   }
   
   
