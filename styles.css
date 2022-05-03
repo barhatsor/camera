@@ -167,6 +167,7 @@ body {
   background: #fff;
   z-index: 1000;
   gap: calc(4px / var(--webkit-scale));
+  flex-wrap: wrap;
   padding: 10px;
   display: none;
 }
@@ -181,6 +182,7 @@ body {
   object-fit: cover;
   background-image: var(--placeholder-image) var(--play-icon);
   background-size: cover;
+  background-position: center;
   
   color: #fff;
   /*background: var(--play-icon) no-repeat center;
