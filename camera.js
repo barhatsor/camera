@@ -288,12 +288,14 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     
     let out = '';
     
+    galleryWrapper.innerHTML = '';
+    
     files.forEach(async (file) => {
       
       const thumbnailURL = await blobToDataURL(file);
             
       galleryWrapper.innerHTML += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="this.play()" class="picture" crossorigin="anonymous"></video>';
-            
+      
     });
     
     galleryWrapper.classList.add('visible');
