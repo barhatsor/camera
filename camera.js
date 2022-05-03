@@ -260,7 +260,7 @@ initializeCamera();
 document.querySelector('#gallery-input').addEventListener('change', function() {
   if (this.files && this.files[0]) {
     
-    log.innerText = JSON.stringify(this.files);
+    document.querySelector('.log').innerText = JSON.stringify(this.files);
     
     cameraView.srcObject = this.files[0];
     cameraView.play();
