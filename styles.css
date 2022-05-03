@@ -158,6 +158,29 @@ body {
 }
 
 
+.gallery-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 1000;
+  display: flex;
+  gap: calc(4px / var(--webkit-scale));
+  padding: 10px;
+  display: none;
+}
+
+.gallery-wrapper .picture {
+  width: calc(273px / var(--webkit-scale));
+  height: calc(273px / var(--webkit-scale));
+  object-fit: cover;
+  background-image: var(--placeholder-image);
+}
+
+
+
 .log {
   position: fixed;
   color: #000;
