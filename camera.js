@@ -281,8 +281,21 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     cameraView.ondurationchange = function() {
       
       let duration = this.duration;
+      let mins = false;
       
-      if (duration >= 60) duration = duration / 60;
+      if (duration >= 60) {
+        duration = duration / 60;
+        mins = true;
+      }
+      
+      duration = Math.round(duration);
+      
+      if (!mins && String(duration).length === 1) {
+        duration += '0';
+      }
+      
+      if (!mins) duration += '0:';
+      else duration += ':00';
       
       document.querySelector('.log').innerText = Math.round(duration);
     };
