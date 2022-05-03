@@ -294,8 +294,8 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
         duration += '0';
       }
       
-      if (!mins) duration += '0:';
-      else duration += ':00';
+      if (!mins) duration = '0:' + duration;
+      else duration = duration + ':00';
       
       document.querySelector('.log').innerText = duration;
     };
