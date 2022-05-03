@@ -280,6 +280,18 @@ function blobToDataURL(blob, callback) {
 }
 
 
+function touchEvent(target) {
+  
+  var e = document.createEvent('MouseEvent');
+
+  e.initMouseEvent("touchstart", true, true, window, 1, screenX, screenY, clientX, clientY,
+      ctrlKey, altKey, shiftKey, metaKey, button, relatedTarget);
+  
+  target.dispatchEvent(e);
+  
+}
+
+
 document.querySelector('#gallery-input').addEventListener('change', function() {
   
   const files = Array.from(this.files);
@@ -294,7 +306,7 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
       
       const thumbnailURL = await blobToDataURL(file);
             
-      galleryWrapper.innerHTML += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" ontouchstart="this.play()" onpause="this.click()" class="picture" crossorigin="anonymous"></video>';
+      galleryWrapper.innerHTML += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="this.play()" onpause="touchEvent(this)" class="picture" crossorigin="anonymous"></video>';
       
     });
     
