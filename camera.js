@@ -271,6 +271,13 @@ function formatBytes(bytes, decimals = 2) {
 }
 
 
+function blobToDataURL(blob, callback) {
+  var a = new FileReader();
+  a.onload = function(e) {callback(e.target.result);}
+  a.readAsDataURL(blob);
+}
+
+
 document.querySelector('#gallery-input').addEventListener('change', function() {
   
   const files = Array.from(this.files);
@@ -281,18 +288,14 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     
     files.forEach(file => {
       
-      out += '<video src="' + URL.createObjectURL(file) + '" onclick="this.play()" class="picture" crossorigin="anonymous"></video>';
+      const thumbnailURL = blobToDataURL(file);
+            
+      out += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="this.play()" class="picture" crossorigin="anonymous"></video>';
       
     });
     
     galleryWrapper.innerHTML = out;
     galleryWrapper.classList.add('visible');
-    
-    galleryWrapper.querySelectorAll('.picture').forEach(pic => {
-      
-      pic.play();
-      
-    });
     
   }
   
