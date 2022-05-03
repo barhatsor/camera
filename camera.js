@@ -279,7 +279,12 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     cameraView.play();
     
     cameraView.ondurationchange = function() {
-      document.querySelector('.log').innerText = (this.duration / 60);
+      
+      let duration = this.duration;
+      
+      if (duration >= 60) duration = duration / 60;
+      
+      document.querySelector('.log').innerText = Math.round(duration);
     };
     
     //document.querySelector('.log').innerHTML += '<a href="' + cameraView.src + '" download>Download</a>';
