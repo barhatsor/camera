@@ -166,7 +166,7 @@ body {
   bottom: 0;
   background: #fff;
   z-index: 1000;
-  gap: calc(4px / var(--webkit-scale));
+  grid-gap: calc(4px / var(--webkit-scale));
   flex-wrap: wrap;
   padding: 10px;
   display: none;
