@@ -4,6 +4,8 @@ const recordButton = document.querySelector('.record-wrapper');
 const flipButton = document.querySelector('.camera-option.flip');
 const videoContainer = document.querySelector('.video-container');
 
+const galleryInput = document.querySelector('#gallery-input');
+
 // video constraints
 const constraints = {
   video: {
@@ -38,7 +40,7 @@ let cachedFrames = [];
 
 // ffmpeg
 
-const { createFFmpeg } = FFmpeg;
+/*const { createFFmpeg } = FFmpeg;
 const ffmpeg = createFFmpeg({
   log: true
 });
@@ -94,7 +96,7 @@ async function transcodeVideo(recordedBlob) {
                 the browser automatically revokes the 
                 created URL when the document is unloaded,
                 but it's still good to revoke the created 
-                URLs */
+                URLs 
     URL.revokeObjectURL(recordedMediaURL);
     
   };
@@ -154,7 +156,7 @@ async function initializeCamera() {
   // stop video stream
   stopVideoStream();
   
-  /*try {*/
+  /*try {
     
     // get user media
     videoStream = await navigator.mediaDevices.getUserMedia(constraints);
@@ -187,7 +189,7 @@ async function initializeCamera() {
     
     alert('Could not access the camera');
     
-  }*/
+  }
   
 }
 
@@ -251,6 +253,16 @@ flipButton.addEventListener('click', () => {
   
 });
 
-
 initializeCamera();
+*/
+
+
+document.querySelector('#gallery-input').addEventListener('change', function() {
+  if (this.files && this.files[0]) {
+    
+    cameraView.srcObject = this.files[0];
+    cameraView.play();
+    
+  }
+});
 
