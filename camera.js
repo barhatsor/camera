@@ -284,8 +284,8 @@ function touchEvent(target) {
   
   var e = document.createEvent('MouseEvent');
 
-  e.initMouseEvent("touchstart", true, true, window, 1, screenX, screenY, clientX, clientY,
-      ctrlKey, altKey, shiftKey, metaKey, button, relatedTarget);
+  e.initMouseEvent("touchstart", true, true, window, 1, 0, 0, 0, 0,
+      false, false, false, false, false, target);
   
   target.dispatchEvent(e);
   
