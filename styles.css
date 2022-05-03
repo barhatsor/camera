@@ -166,10 +166,13 @@ body {
   bottom: 0;
   background: #fff;
   z-index: 1000;
-  display: flex;
   gap: calc(4px / var(--webkit-scale));
   padding: 10px;
   display: none;
+}
+
+.gallery-wrapper.visible {
+  display: flex;
 }
 
 .gallery-wrapper .picture {
