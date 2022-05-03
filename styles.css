@@ -19,6 +19,7 @@ body {
   /*will-change: transform;
   transition: .4s var(--cubic-function) transform;*/
   background-image: var(--placeholder-image);
+  background-size: cover;
   z-index: -1;
 }
 
