@@ -306,7 +306,7 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
       
       const thumbnailURL = await blobToDataURL(file);
             
-      galleryWrapper.innerHTML += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="this.play();" onpause="this.setAttribute(\'controls\', true);this.removeAttribute(\'controls\');" class="picture" crossorigin="anonymous"></video>';
+      galleryWrapper.innerHTML += '<video src="' + thumbnailURL + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="this.play();" onpause="this.setAttribute(\'controls\', true);this.removeAttribute(\'controls\');" class="picture" crossorigin="anonymous"></video>';
       
     });
     
