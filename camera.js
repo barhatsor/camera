@@ -297,7 +297,7 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
       if (!mins) duration = '0:' + duration;
       else duration = duration + ':00';
       
-      document.querySelector('.log').innerText = duration;
+      document.querySelector('.log').innerText = '~' + duration;
     };
     
     //document.querySelector('.log').innerHTML += '<a href="' + cameraView.src + '" download>Download</a>';
