@@ -292,11 +292,10 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
       
       const thumbnailURL = await blobToDataURL(file);
             
-      out += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="this.play()" class="picture" crossorigin="anonymous"></video>';
-      
+      galleryWrapper.innerHTML += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="this.play()" class="picture" crossorigin="anonymous"></video>';
+            
     });
     
-    galleryWrapper.innerHTML = out;
     galleryWrapper.classList.add('visible');
     
   }
