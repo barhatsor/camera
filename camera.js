@@ -272,9 +272,11 @@ function formatBytes(bytes, decimals = 2) {
 
 
 function blobToDataURL(blob, callback) {
-  var a = new FileReader();
-  a.onload = function(e) {callback(e.target.result);}
-  a.readAsDataURL(blob);
+  return new Promise(resolve => {
+    var a = new FileReader();
+    a.onload = function(e) {resolve(e.target.result);}
+    a.readAsDataURL(blob);
+  });
 }
 
 
@@ -286,9 +288,9 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     
     let out = '';
     
-    files.forEach(file => {
+    files.forEach(async (file) => {
       
-      const thumbnailURL = blobToDataURL(file);
+      const thumbnailURL = await blobToDataURL(file);
             
       out += '<video src="' + URL.createObjectURL(file) + '" style="background-image:url(\'' + thumbnailURL + '\')" onclick="this.play()" class="picture" crossorigin="anonymous"></video>';
       
