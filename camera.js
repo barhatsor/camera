@@ -251,28 +251,6 @@ flipButton.addEventListener('click', () => {
   
   useFrontCamera = !useFrontCamera;
   
-  if (useFrontCamera) {
-    
-    cameraView.classList.add('flipping-to-user');
-    
-    wait(() => {
-      
-      cameraView.classList.remove('flipping-to-user');
-      
-    }, 400);
-    
-  } else {
-    
-    cameraView.classList.add('flipping-to-env');
-    
-    wait(() => {
-      
-      cameraView.classList.remove('flipping-to-user');
-      
-    }, 400);
-    
-  }
-  
   initializeCamera();
   
 });
