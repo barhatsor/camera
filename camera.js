@@ -281,7 +281,7 @@ document.querySelector('#gallery-input').addEventListener('change', function() {
     
     files.forEach(file => {
       
-      out += '<video src="' + URL.createObjectURL(this.files[0]) + '" class="picture" controls crossorigin="anonymous"></video>';
+      out += '<video src="' + URL.createObjectURL(file) + '" class="picture" controls crossorigin="anonymous"></video>';
       
     });
     
