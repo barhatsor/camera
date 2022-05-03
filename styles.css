@@ -182,7 +182,7 @@ body {
   /*background-image: var(--placeholder-image) var(--play-icon);
   background-size: cover;*/
   
-  background: var(--play-icon);
+  background: var(--play-icon) no-repeat center 24px;
 }
 
 
