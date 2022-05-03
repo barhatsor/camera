@@ -273,7 +273,7 @@ function formatBytes(bytes, decimals = 2) {
 
 document.querySelector('#gallery-input').addEventListener('change', function() {
   
-  const files = this.files;
+  const files = Array.from(this.files);
   
   if (files) {
     
