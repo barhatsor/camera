@@ -179,12 +179,12 @@ body {
   width: calc(273px / var(--webkit-scale));
   height: calc(273px / var(--webkit-scale));
   object-fit: cover;
-  /*background-image: var(--placeholder-image) var(--play-icon);
-  background-size: cover;*/
+  background-image: var(--placeholder-image) var(--play-icon);
+  background-size: cover;
   
   color: #fff;
-  background: var(--play-icon) no-repeat center;
-  background-size: 24px;
+  /*background: var(--play-icon) no-repeat center;
+  background-size: 24px;*/
 }
 
 
